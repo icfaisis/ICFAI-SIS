@@ -76,21 +76,20 @@ if "user" not in st.session_state:
 
 # ---------------- Login Page ----------------
 def login():
-    st.markdown("<h1 style='text-align: center; color: #0056B3;'>ICFAI UNIVERSITY</h1>", unsafe_allow_html=True)
-    st.markdown("### Welcome to the College Portal")
-    
+    st.subheader("Login to Student Portal")
     enrollment = st.text_input("Enrollment Number")
     password = st.text_input("Password", type="password")
-    
-    if st.button("Login"):
-        user = USER_DATA.get(enrollment)
-        if user and user["password"] == password:
+    login_btn = st.button("Login")
+
+    if login_btn:
+        if enrollment in students and students[enrollment]["password"] == password:
             st.session_state.logged_in = True
-            st.session_state.user = user
+            st.session_state.user = students[enrollment]
             st.success("Login successful!")
-            st.experimental_rerun()
+            st.rerun()  # ✅ replaces st.experimental_rerun()
         else:
             st.error("Invalid Enrollment Number or Password")
+
 
 def logout():
     st.session_state.logged_in = False
