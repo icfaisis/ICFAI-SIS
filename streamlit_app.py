@@ -110,13 +110,13 @@ def login():
     st.markdown(
         """
         <style>
-        .main {background-color: #ffffff;}
+        .main {background-color: #f5f5f5;}
         .stTextInput > div > div > input {
-            background-color: #f0f0f0;
-            color: #000000;
+            background-color: #e6e6e6;
+            color: #333;
             font-size: 18px;
         }
-        .stApp {background-color: #ffffff;}
+        .stApp {background-color: #f5f5f5;}
         .login-container {
             display: flex; flex-direction: column;
             align-items: center;
@@ -128,12 +128,9 @@ def login():
             font-size: 36px;
             font-family: 'Georgia', serif;
             margin-bottom: 24px;
-            color: #000000;
+            color: #0056B3;
             font-weight: bold;
             letter-spacing: 1px;
-        }
-        body {
-            color: #000000;
         }
         </style>
         <div class="college-header">ICFAI UNIVERSITY</div>
